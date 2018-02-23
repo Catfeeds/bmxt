@@ -1,0 +1,21 @@
+<?php
+/**
+ * 文件名 : payment.php
+ * ============================================================================
+
+ * 网站地址: http://www.yijianshen.net；
+ * ============================================================================
+ * $Author: Dawn.S $
+ * $Id: payment.php  2015/10/13 $
+*/
+use geekdawns\unionpay\Unionpay;
+
+ echo(Unionpay::widget([
+     'order_sn' => time()-1,
+     'log_id'   => '45646',
+     'add_time' => time(),
+     'order_amount' => $info['apply_money'],
+     '_csrf' => \Yii::$app->request->getCsrfToken (),
+     'apply_id' => $info['apply_id'],
+ ]));
+Unionpay::widget();

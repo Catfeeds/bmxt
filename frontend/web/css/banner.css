@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.banner_index{
+    position: absolute;
+    left: 0px;
+    top:60px;
+    width: 1600px;
+    height: 400px;
+    overflow: hidden;
+    z-index: 100;
+
+}
+.imgbox_banner {
+    position: relative;
+    width: 9999px;
+}
+.imgbox_banner li{
+    width: 1600px;
+    height: 400px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    list-style: none;
+}
+
+.imgnav_banner{
+    position: absolute;
+    z-index: 1000;
+    width: 1600px;
+    height: 20px;
+    bottom:5px;
+    text-align: center;
+}
+
+.imgnav_banner li{
+    display: block;
+    float: left;
+    list-style: none;
+    cursor: pointer;
+    border-radius:0;
+    font-size: 15px;
+    margin-left: 15px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    border: 0px red solid;
+}
+.imgbox_hezuo li{
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    display: block;
+    float: left;
+    list-style: none;
+}

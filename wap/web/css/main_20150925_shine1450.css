@@ -1,0 +1,46 @@
+div.main
+{
+	width: 900px;
+	height: auto;
+	margin: 0px auto;
+	border:0px solid #cccccc;
+}
+
+div.main1
+{
+	width:100%;
+	height: 50px;
+	background: url(images/baoming.png) no-repeat -340px -480px;
+	margin: 0px auto;
+}
+p.main2
+{
+	font-size: 25px;
+	font-family: 宋体;
+	font-weight: 700;
+	text-align: center;
+}
+img.main3
+{
+	display: block;
+	float: right;
+	border: 1px solid #cccccc;
+}
+p.main4
+{
+	font-family: 宋体;
+	font-size: 14px;
+	line-height: 25px;
+	border: 0px solid #cccccc;
+}
+button.main5
+{
+	background: url(images/100.jpg);
+	width: 105px;
+	height: 42px;
+	border: 0px;
+	color: white;
+	font-family: 宋体;
+	font-size: 22px;
+	margin-left: 20px;
+}

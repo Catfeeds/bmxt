@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+.topnewss{border-right:#b7b7b7 1px solid;border-top:#b7b7b7 1px solid;z-index:90;background:url("../images/notice.png") no-repeat 0px 0px #f0f0f0;left:0px;border-left:#b7b7b7 1px solid;width:310px;border-bottom:#b7b7b7 1px solid;top:0px;height:280px}
+.notice{
+    margin-top: 10px;
+}

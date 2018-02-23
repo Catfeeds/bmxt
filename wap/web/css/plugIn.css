@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#toTop {
+    position: fixed;
+    z-index: 9999;
+}
+#bannerBox {
+    position: absolute;
+    left: 0;
+    top: 61px;
+    z-index: 99;
+}
+#bannerNav {
+    position: absolute;
+    z-index: 999;
+}
+#bannerNav li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    border: 1px solid #cccccc;
+    list-style-type: none;
+}

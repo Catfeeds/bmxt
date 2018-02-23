@@ -1,0 +1,69 @@
+﻿<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2015/9/6
+ * Time: 15:25
+ */
+$connection = Yii::$app->db;
+
+/*
+ * 路径存到数据库
+ */
+
+$sql = "select img from bm_img";
+
+$command = $connection->createCommand($sql);
+
+$result = $command->queryAll();
+
+//print_r($result);
+
+require_once '../excel/PHPExcel/IOFactory.php';
+$reader = PHPExcel_IOFactory::createReader('Excel5'); // 读取 excel 文件方式  此方法是读取excel2007之前的版本 excel2007 为读取2007以后的版本 也可以查\Classes\PHPExcel\Reader 文件夹中的类（为所有读取类，需要哪个填上哪个就行）
+$gs_id = Yii::$app->user->id;
+$connection = Yii::$app->db;
+$gs_id = Yii::$app->user->id;
+$sql = "select * from bm_img where gs_id='$gs_id'";
+$command = $connection->createCommand($sql);
+$result = $command->queryAll();
+foreach($result as $key=>$val){
+}
+$a=$val['img'];
+
+$PHPExcel = $reader->load("$a"); // 文件名称
+$sheet = $PHPExcel->getSheet(0); // 读取第一个工作表从0读起
+$highestRow = $sheet->getHighestRow(); // 取得总行数
+$highestColumn = $sheet->getHighestColumn(); // 取得总列数
+// 根据自己的数据表的大小修改
+$arr = array(0=>'A',1=>'A',2=>'B',3=>'C',4=>'D',5=>'E',6=>'F',7=>'G',8=>'H',9=>'I',10=>'J',11=>'K',12=>'L',13=>'M', 14=>'N',15=>'O',16=>'P',17=>'Q',18=>'R',19=>'S',20=>'T',21=>'U',22=>'V',23=>'W',24=>'X',25=>'Y',26=>'Z');
+
+// 每次读取一行，再在行中循环每列的数值
+for ($row = 2; $row <= $highestRow; $row++) {
+
+    $val_1 = $sheet->getCellByColumnAndRow(0, $row)->getValue();
+    $val_2 = $sheet->getCellByColumnAndRow(1, $row)->getValue();
+    $val_3 = $sheet->getCellByColumnAndRow(2, $row)->getValue();
+    $val_4 = $sheet->getCellByColumnAndRow(3, $row)->getValue();
+    echo "<input type='text' name='name' value=$val_1>";
+    echo "<input type='text' name='sex' value=$val_2>";
+    echo "<input type='text' name='age' value=$val_3>";
+    echo "<input type='text' name='favourite' value=$val_4>";
+    echo "<br/>";
+
+//    var_dump($val_1);    var_dump($val_2);    var_dump($val_3);
+//    var_dump($val_4);
+
+    $gs_id = Yii::$app->user->id;
+    $connection = Yii::$app->db;
+    $sql = "insert into bm_gsemployee SET name='$val_1',phone='$val_2',sex='$val_3',id_card='$val_4',gs_id='$gs_id'";
+
+
+    $command = $connection->createCommand($sql);
+    $result = $command->execute();
+};
+
+?>
+<a href="http://b1b.yijianshen.net/index.php?r=site/yonghu">确定</a>
+
+

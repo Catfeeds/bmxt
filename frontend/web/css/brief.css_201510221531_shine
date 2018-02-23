@@ -1,0 +1,50 @@
+div.brief
+{
+	width: 900px;
+	height: 320px;
+	margin: 20px auto 50px;
+	border: 1px solid #cccccc;
+	font-family: sans-serif;
+}
+
+.brief_1 {
+	float: left;
+	width: 480px;
+	height: 320px;
+}
+
+.brief_2{
+	float: left;
+	margin-left: 30px;
+}
+
+.brief_2 p{
+	font-size: 16px;
+}
+
+.brief_btn{
+	display: block;
+	float: left;
+	background: #FF6701;
+	padding: 0px 15px;
+    height: 40px;
+	line-height: 35px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+
+div.share
+{
+	width: 16px;
+	float:right;
+	border: 0px solid #cccccc;
+}
+div.share img
+{
+	max-width: 16px;
+}

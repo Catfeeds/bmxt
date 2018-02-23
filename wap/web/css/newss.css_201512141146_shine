@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/* topnewsbox */
+.topnewsbox{width:310px;height:262px;margin-top:10px;margin-bottom: 40px;}
+.topnews{border-right:#b7b7b7 1px solid;border-top:#b7b7b7 1px solid;z-index:90;background:url("../images/article.png") no-repeat 0px 0px #f0f0f0;left:0px;border-left:#b7b7b7 1px solid;width:310px;border-bottom:#b7b7b7 1px solid;top:0px;height:280px}
+.topnewspic{float:left;margin:7px 14px 0px 6px;overflow:hidden;width:414px;height:243px}
+.topnewspic img{width:414px;height:243px}
+.topnewslist{margin-top:7px;float:left;overflow:hidden;width:310px;height:243px;text-align:left}
+.topnewslist p{font-weight:700;}
+.topnewslist ul{margin:20px auto 0px;overflow:hidden;width:250px;height:216px}
+.topnewslist ul li{font-size:14px;overflow:hidden;width:170px;line-height:30px;border-bottom:#dbdbdb 1px solid;height:30px;margin-left: 60px;}
+.topnewslist ul li a{padding-right:0px;padding-left:10px;background:url(../images/dian.gif) no-repeat 4px;padding-bottom:5px;padding-top:5px;}
+.topnewslist ul li a.up{background:url(../images/jiantou.gif) no-repeat;}
+.topnewslist ul li a.up:hover, .topnewslist ul li a.up:hover{background:url(../images/jiantou.gif) no-repeat;color:#f25500}
+.topnewsbg{z-index:80;background:#dedede;left:4px;width:310px;position:absolute;top:4px;height:258px}
+
+.gang{
+    height: 4px;
+    width: 310px;
+    background-color: #008200;
+}
+
+.topnewsboxs{width:310px;height:200px;margin-top:20px;}
+.topnewss{border-right:#b7b7b7 1px solid;border-top:#b7b7b7 1px solid;z-index:90;background:url("../images/articles.png") no-repeat 0px 0px #f0f0f0;left:0px;border-left:#b7b7b7 1px solid;width:310px;border-bottom:#b7b7b7 1px solid;top:0px;height:200px}
+.topnewspics{float:left;margin:7px 14px 0px 6px;overflow:hidden;width:414px;height:160px}
+.topnewspic img{width:414px;height:243px}
+.topnewslists{margin-top:7px;float:left;overflow:hidden;width:310px;height:160px;text-align:left}
+.topnewslists p{font-weight:700;}
+.topnewslists ul{margin:20px auto 0px;overflow:hidden;width:250px;height:120px}
+.topnewslists ul li{font-size:14px;overflow:hidden;width:170px;line-height:30px;border-bottom:#dbdbdb 1px solid;height:30px;margin-left: 60px;}
+.topnewslists ul li a{padding-right:0px;padding-left:10px;background:url(../images/dian.gif) no-repeat 4px;padding-bottom:5px;padding-top:5px;}
+.topnewslists ul li a.up{background:url(../images/jiantou.gif) no-repeat;}
+.topnewslists ul li a.up:hover, .topnewslist ul li a.up:hover{background:url(../images/jiantou.gif) no-repeat;color:#f25500}
+.topnewsbgs{z-index:80;background:#dedede;left:4px;width:310px;position:absolute;top:4px;height:258px}
+

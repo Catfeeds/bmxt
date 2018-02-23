@@ -1,0 +1,66 @@
+div.brief
+{
+	width: 900px;
+	height: 440px;
+	margin: 0px auto;
+	border: 0px solid #cccccc;
+}
+p.title
+{
+	font-size: 30px;
+	font-family: 宋体;
+	font-weight: 700;
+	margin: 0px;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	border: 0px solid #cccccc;
+}
+div.left
+{
+	width: 480px;
+	height: 320px;
+	background: url(images/2015-08-18_151412.png) no-repeat ;
+	float: left;
+	border: 0px solid #cccccc;
+}
+p.right
+{
+	font-family: 宋体;
+	font-size: 16px;
+	margin-left: 25px;
+	line-height: 35px;
+	float:left;
+}
+p.right button
+{	
+	font-family: 宋体;
+	font-size: 22px;
+	font-weight: 700;
+	width:90px;
+	height: 50px;
+	border: 0px;
+	display: block;
+	float: left;
+	color:white;
+}
+button.one
+{
+	background: #3399EE;
+	margin: 40px 20px 0px 20px;            
+}
+button.two
+{
+	background: #FF6701;
+	margin: 40px 20px 0px 20px;            
+
+}
+div.share
+{
+	width: 16px;
+	float:right;
+	border: 0px solid #cccccc;
+}
+div.share img
+{
+	max-width: 16px;
+}

@@ -1,0 +1,69 @@
+div.ad
+{
+	width: 900px;
+	height: 170px;
+	margin:	40px auto ;
+	background:url(images/baoming.png) no-repeat -340px -2022px;
+	border: 0px solid #cccccc;
+}
+div.link
+{
+	width: 900px;
+	height: 190px;
+	padding: 0px 0px;
+	border: 0px solid #ccc;
+	margin:	40px auto ;
+	background:#eee;
+}			
+div.link1
+{
+	width:140px;
+	height:100%;
+	float:left;
+	border-right:#dddddd solid 2px;
+	text-align: center;
+	vertical-align: middle;
+}			
+div.link1 p
+{
+	margin-top: 80px;
+	font-size:25px;
+	font-family:黑体;
+}			
+table.link2
+{
+	width:610px;
+	height:100%;
+	float:left;
+	text-align: center;
+}
+table.link2 a
+{
+	text-decoration:none;
+	color:black;
+	font-family:宋体;
+	font-size:16px;
+}
+		
+div.link3
+{
+	width: 148px;
+	height:100%;
+	float:left;
+	background:url(images/baoming.png) no-repeat -1095px -2255px;
+}		
+
+div.cr
+{
+	width: 900px;
+	height: 60px;
+	padding: 0px 0px;
+	border: 0px solid #666;
+	margin:	20px auto ;
+	text-align: center;
+}
+div.cr p
+{
+	text-transform:lowercase;
+	font-family:Arial, Helvetica, sans-serif;
+}			

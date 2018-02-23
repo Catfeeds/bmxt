@@ -1,0 +1,18 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2015/11/2
+ * Time: 15:35
+ */
+print_r($value);
+?>
+<form method="post" action="http://b1b.yijianshen.net/index.php?r=site/jianle">
+    战队名称：<input type="text" name="gsname"/>
+    战队人员：<input type="text" value="<?php
+    foreach($value as $key=>$val){
+        echo $val.'，';
+    } ?>" name="gsteam" />
+    <input type="hidden" value="<?php print_r($value);?>" name=""/>
+    <input type="submit" value="确定"/>
+</form>

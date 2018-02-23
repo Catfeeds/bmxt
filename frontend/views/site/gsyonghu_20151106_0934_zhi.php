@@ -1,0 +1,252 @@
+<?php
+use yii\helpers\Html;
+use yii\grid\GridView;
+/* @var $dataProvider yii\data\ActiveDataProvider */
+$this->title = '用户中心';
+
+$this->registerCssFile('css/gsyonghu.css');
+$this->registerJsFile('js/jquery-1.11.3.min.js');
+$this->registerJsFile('js/gsyonghu.js');
+
+$connection = Yii::$app->db;
+$user_id = Yii::$app->user->id;
+/*
+ * 用户名
+ */
+$username = "select username,sex,birthday,email,dizhi,xingming,id_card,phone from bm_user where id=$user_id";
+
+$usernamec = $connection->createCommand($username);
+
+$usernamer = $usernamec->queryAll();
+
+?>
+
+
+<div class="limit" id="limit">
+    <ul class="nav_user" id="nav_user">
+        <li class="nav1_user" style="color: #ffffff;">公司账号信息</li>
+        <li class="nav2_user" style="background: #eeeeee;">报名赛事</li>
+        <li class="nav3_user" style="background: #eeeeee;" >员工信息</li>
+        <li class="nav3_user" style="background: #eeeeee;" >组建队伍</li>
+    </ul>
+
+    <div class="limit_l" id="limit_l">
+        <!--个人资料-->
+        <div class="infor_user" id="infor_user">
+            <?php foreach ($usernamer as $key=>$val) { ?>
+                <p>用&nbsp;&nbsp;户&nbsp;&nbsp;名：<?php echo $val['username'] ?></p>
+                <p style="background: #f2f2f2;">组&nbsp;&nbsp;建&nbsp;&nbsp;人：<?php echo $val['xingming'] ?></p>
+                <p>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<?php echo $val['sex'] ?></p>
+                <p style="background: #f2f2f2;">出生日期：<?php echo $val['birthday'] ?></p>
+                <p>电子邮箱：<?php echo $val['email'] ?></p>
+                <p style="background: #f2f2f2;">手机号码：<?php echo $val['phone'] ?></p>
+                <p style="border-bottom: 1px solid #f2f2f2;">通信地址：<?php echo $val['dizhi'] ?></p>
+                <p style="background: #f2f2f2;">身&nbsp;&nbsp;份&nbsp;&nbsp;证：<?php echo $val['id_card'] ?></p>
+            <?php } ?>
+            <!--用js设置标签对齐及其宽度-->
+            <?php echo '<a class="btn btn-primary" style="margin-top: 10px; margin-left: 10px;" href="index.php?r=ziliao/update&id='.Yii::$app->user->id.'">修改个人信息</a>'; ?>
+        </div>
+
+        <!--赛事信息-->
+
+        <div class="infor_comp" id="infor_comp">
+            <div class="butbox" id="butbox">
+                <button class="but_bein btn btn-primary" id="but_bein">已报名赛事</button>
+                <button class="but_ended btn btn-primary" id="but_ended">获奖的赛事</button>
+            </div>
+            <ul class="bein" id="bein" >
+                <?php if(!empty($model2)){ ?>
+                    <?php foreach($model2 as $key => $val){ ?>
+                        <li style="border: 1px solid seagreen;width: 690px;height: 122px;margin-top: 20px;">
+                            <div style="float: left;">
+                                <a href="index.php?r=site/content&id=<?php echo $val['id'] ?>" ><img src="<?php echo $val['event_img']  ?>" width="180px;" height="120px;"/></a>
+                            </div>
+                            <p style="float: left; margin: 20px 20px; width: 450px; height: 20px; overflow: hidden; font-size: 16px; line-height: 16px;"><?php echo $val['event_name']  ?></p>
+                            <div style="float: left;margin-top: 0px;margin-left: 20px; ">
+                                <p>报名时间：<?php echo $val['apply_time_start']  ?></p>
+                                <p>结束时间：<?php echo $val['apply_time_end']  ?></p>
+                            </div>
+                            <div style="float: left;margin-top: 0px;margin-left: 20px;">
+                                <p>报名费用：￥<?php echo $val['apply_money']  ?></p>
+                                <p style="width">地点：<?php echo $val['place']  ?></p>
+                            </div>
+                        </li>
+                    <?php } ?>
+                <?php } ?>
+
+
+            </ul>
+            <!-- 小智 -->
+            <ul class="ended" id="ended" >
+                <?php if(!empty($model3)){ ?>
+                    <?php foreach($model3 as $key=>$val){ ?>
+                        <li style="border: 1px solid red;width: 690px;height: 122px;margin-top: 20px;">
+                            <div style="float: left;">
+                                <a href="index.php?r=site/content&id=<?php echo $val['id'] ?>" ><img src="<?php echo $val['event_img']  ?>" width="180px;" height="120px;"/></a>
+                            </div>
+                            <p style="float: left; margin: 20px 20px; width: 450px; height: 20px; overflow: hidden; font-size: 16px; line-height: 16px;"><?php echo $val['event_name']  ?></p>
+                            <div style="float: left;margin-top: 0px;margin-left: 20px; ">
+                                <p>报名时间：<?php echo $val['apply_time_start']  ?></p>
+                                <p>结束时间：<?php echo $val['apply_time_end']  ?></p>
+                            </div>
+                            <div style="float: left;margin-top: 0px;margin-left: 20px;">
+                                <p>报名费用：￥<?php echo $val['apply_money']  ?></p>
+                                <p style="width">地点：<?php echo $val['place']  ?></p>
+                            </div>
+                            <div style="float: left;margin-top: 0px;margin-left: 20px;">
+                                <p>名次：<?php echo $val['position']  ?></p>
+                            </div>
+                        </li>
+                    <?php }}else{ ?>
+                    <div>
+                        <p style="margin: 10px;">目前没有您的获奖信息，请继续加油。</p>
+                        <img alt="加油" src="/images/fighting.png" style="width: 698px; height: 350px;" />
+                    </div>
+                <?php } ?>
+            </ul>
+        </div>
+
+        <!--员工信息-->
+        <div class="favor_comp" id="favor_comp" >
+            <table class="table table-bordered table-striped" id="elyInfo">
+                <a class="but_bein btn btn-primary" href="index.php?r=gsemployee/index">操作员工</a>
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>电话</th>
+                    <th>性别</th>
+                    <th>身份证</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($xinxi as $key=>$val) { ?>
+                <tr>
+                    <td><?php echo $val->name ?></td>
+                    <td><?php echo $val->phone ?></td>
+                    <td><?php echo $val->sex ?></td>
+                    <td><?php echo $val->id_card ?></td>
+                </tr>
+                <?php } ?>
+                </tbody>
+
+            </table>
+        </div>
+<!--员工信息到此结束        -->
+<!--组建队伍        -->
+        <div id="teamCreat" style="display: none;">
+            <table class="table table-bordered table-striped" id="elyInfo" >
+                <thead>
+                <tr>
+                    <th>战队序号</th>
+                    <th>战队名</th>
+                    <th>战队人员</th>
+                    <th>是否删除</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php foreach ($model as $key=>$val) { ?>
+                    <tr>
+                        <td><?php echo $val['team_id'] ?></td>
+                        <td><?php echo $val['gsname'] ?></td>
+                        <td><?php echo $val['gsteam'] ?></td>
+
+                        <td><a href="http://www.51first.cn/index.php?r=site/delete&id=<?php echo $val['id'] ?>">删除</a></td>
+                    </tr>
+                <?php } ?>
+                </form>
+                </tbody>
+
+            </table>
+            <form method="post" action="http://www.51first.cn/index.php?r=site/jiandui">
+            <table class="table table-bordered table-striped" id="elyInfo" >
+                <input id="btn-creat" type="submit" class="but_bein btn btn-primary" value="建队" style="margin: 10px;" />
+                <span>请点击队员信息列表前的选择框，选中您的队员，组建战队。</span>
+                <thead>
+                <tr>
+                    <th>选择框</th>
+                    <th>姓名</th>
+                    <th>电话</th>
+                    <th>性别</th>
+                    <th>身份证</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php foreach ($xinxi as $key=>$val) { ?>
+                    <tr>
+                        <td><input name="checkbox[]"  type="checkbox" value="<?php echo $val->name ?>" /></td>
+                        <td><?php echo $val->name ?></td>
+                        <td><?php echo $val->phone ?></td>
+                        <td><?php echo $val->sex ?></td>
+                        <td><?php echo $val->id_card ?></td>
+                    </tr>
+                <?php } ?>
+
+                </tbody>
+
+            </table>
+            </form>
+        </div>
+
+    </div>
+<!--limit_l到此结束-->
+    <div class="limit_r" id="limit_r">
+        <div class="">
+            <p>推荐赛事</p>
+        </div>
+        <div style="height:300px;width:280px;overflow: hidden; ">
+            <ul style="height: 100%">
+                <?php if(!empty($tuijian)){ ?>
+                    <?php foreach($tuijian as $key=>$val){ ?>
+                        <li style="float: left;  list-style: none; margin-top: 5px; ">
+                            <div style=" height:69px; width:280px; border: 1px seagreen solid">
+
+                                <a href="index.php?r=site/content&id=<?php echo $val->id ?>" ><img style="float: left;" width="100px;" height="67px;" src="<?php echo $val->event_img ?>"/></a>
+                                <div class="float" style="margin-top: 20px; margin-left: 10px">
+                                    <a href="index.php?r=site/content&id=<?php echo $val->id ?>" ><p><?php echo $val->event_name ?></p></a>
+
+                                </div>
+
+
+
+                            </div>
+                        </li>
+                    <?php }?>
+                <?php }?>
+
+
+
+
+            </ul>
+
+
+
+
+            <div style="clear: left"></div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<script>
+    document.getElementById("btn-creat").onclick = function () {
+        var flag = 0;
+        var x = document.getElementsByName("checkbox[]");
+        for (i = 0; i < x.length; i++) {
+            if (x[i].checked) {
+                flag++;
+            };
+        };
+        if (flag == 0) {
+            alert("请选择您的队员");
+            return false;
+        };
+    };
+</script>
+
+
+
+
+
+
+

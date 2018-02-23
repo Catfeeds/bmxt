@@ -1,0 +1,103 @@
+/* CSS Document */
+div.header
+{
+	width:100%;
+	height: 60px;
+	background: #3399EE;
+}
+div.limit
+{
+	width: 900px;
+	height: 60px;
+	margin: 0 auto;
+	background: #3399EE;
+	border: 0px solid #cccccc;
+}
+div.logo
+{
+	width: 180px;
+	height: 60px;
+	float: left;
+	padding-right: 80px;
+	background: url(../img/baoming.png) -315px 0px #3399EE;
+}
+div.limit ul
+{
+	width: auto;
+	height: 60px;
+	background:#3399EE;
+	float: left;
+	margin:0px;
+	padding:0px;
+}
+div.limit li
+{
+	list-style-type: none;
+	float: left;
+	border: 0px solid #cccccc;
+}
+a.nav
+{
+	display:block;
+	padding: 18px 16px;
+	font-size: 18px;
+	border: 0px solid #cccccc;
+}
+div.limit a.nav,div.limit a.nav:visited
+{
+	text-decoration: none;
+	color: white;
+}
+div.limit a.nav:hover
+{
+	background: #2277BB;
+}
+div.login 
+{
+	color:white;
+	font-size: 16px;
+	float: left;
+	position: relative;
+	left: 50px;
+	top: 20px;
+	font-size: 14px;
+}
+div.login a,div.login a:visited
+{
+	text-decoration: none;
+	color: white;
+}
+div.login a:hover
+{
+	text-decoration: underline;
+}
+
+
+
+
+div.top .nav ul li a, .top .nav ul li a:visited
+		{
+  		/*background-color: #465c71;  背景色 */
+   	 	 /*border: 1px #4e667d solid; 边框 */
+  		color: #dde4ec; /* 文字颜色 */
+   		display: block; /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    	line-height: 1.35em; /* 行高 */
+    	padding: 4px 20px; /* 内部填充的距离 */
+    	text-decoration: none; /* 不显示超链接下划线 */
+    	white-space: nowrap; /* 对于文本内的空白处，不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 */
+		}
+/* 所有class为menu的div中的ul中的a样式(鼠标移动到元素中的样式) */
+div.top .nav ul li a:hover
+		{
+    	background-color: #bfcbd6; /* 背景色 */
+    	color: #465c71; /* 文字颜色 */
+    	text-decoration: none; /* 不显示超链接下划线 */
+		}
+/* 所有class为menu的div中的ul中的a样式(鼠标点击元素时的样式) */
+div.top .nav ul li a:active
+		{
+    	background-color: #465c71; /* 背景色 */
+    	color: #cfdbe6; /* 文字颜色 */
+    	text-decoration: none; /* 不显示超链接下划线 */
+		}
+		
